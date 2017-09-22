@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>jQuery Assign</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    </head>
+    <body>
+     
+            <div id ="column1">
+        <form action="#" id="form" method="GET" name="form">
+            <input id="firstname" name="firstname" placeholder="firstname" type="text">
+            <input id="lastname" name="lastname" placeholder="lastname" type="text">
+            <input id="phone" name="phone" placeholder="phone" type="text">
+            <input id="email" name="email" placeholder="email" type="text">
+            <input id="batch" name="batch" placeholder="batch" type="text">
+            <input id="location" name="location" placeholder="location" type="text">
+            <input id="address" name="address" placeholder="address" type="text">
+            <input id="previous_employer" name="previous_employer" placeholder="previousEmployerName" type="text">
+            <a href="#" id="submit" onclick="formData()" >Submit</a> <br/>
+            <b> Search : </b><input type="text" id="search" placeholder="Type to search">
+        </form>
+    <select>
+  <option value=10>10</option>
+  <option value=25>25</option>
+  <option value=50>50</option>
+  <option value=100>100</option>
+  <option value="All">All</option>
+</select>
+            </div>
+            <div id="display">
+                
+            </div>
+          
+     
+        <script>  
+      $(document).ready(function(){  
+           $('#search').keyup(function(){  
+                search_table($(this).val());  
+           });  
+           function search_table(value){  
+                $('#dataTable tr').each(function(){  
+                     var found = 'false';  
+                     $(this).each(function(){  
+                          if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)  
+                          {  
+                               found = 'true';  
+                          }  
+                     });  
+                     if(found == 'true')  
+                     {  
+                          $(this).show();  
+                     }  
+                     else  
+                     {  
+                          $(this).hide();  
+                     }  
+                });  
+           }  
+      });  
+ </script>  
+          <script src="script.js"></script>
+    </body>
+</html>
